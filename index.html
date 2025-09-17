@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Tierra</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+
+    <div class="ui-container">
+        <h1 class="title" data-key="title">Cyber-Tierra</h1>
+    </div>
+
+    <div class="language-container">
+        <div class="language-switcher">
+            <button data-lang="es">ES</button>
+            <button data-lang="en">IN</button>
+        </div>
+    </div>
+
+    <div class="help-text">
+        <p data-key="help_message">[Ayuda]: Mueve el Cyber-Tierra para buscar información</p>
+    </div>
+
+    <div id="info-modal" class="modal-hidden">
+        <div class="modal-content">
+            <h2 id="modal-title" data-key="country_title"></h2>
+            <p id="modal-info" data-key="cyber_info"></p>
+            <button id="close-modal" data-key="close_button">CERRAR</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+<script src="script.js"></script>
+<div class="copyright">
+    <p data-key="copyright_text">© 2025 Cyber-Tierra. Creado por Ricardo Salazar.</p>
+</div>
+</body>
+</html>

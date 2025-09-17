@@ -1,0 +1,167 @@
+/* Estilo General y Fondo */
+body {
+    margin: 0;
+    overflow: hidden; /* Evita barras de scroll */
+    background-color: #000;
+    color: #00ff41; /* Color verde hacker */
+    font-family: 'VT323', monospace;
+    text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41 none;
+}
+
+/* Canvas para la escena 3D */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Lo ponemos detrás de todo */
+}
+
+/* Contenedor de la UI */
+.ui-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 4rem;
+    margin: 0;
+    animation: flicker 1.5s infinite alternate;
+}
+
+/* Efecto de parpadeo para el título */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+      0 0 4px #00ff41,
+      0 0 11px #00ff41,
+      0 0 19px #00ff41,
+      0 0 40px #0fa,
+      0 0 80px #0fa;
+  }
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }
+}
+
+/* Nuevo Contenedor para los botones de idioma en la esquina superior derecha */
+.language-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+/* Selector de idioma */
+.language-switcher button {
+    background-color: transparent;
+    border: 2px solid #00ff41;
+    color: #00ff41;
+    padding: 8px 13px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+}
+
+.language-switcher button:hover {
+    background-color: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 15px #00ff41;
+}
+
+/* Nuevo Estilo para el mensaje de ayuda en la parte inferior */
+.help-text {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+/* Ventana Modal para información */
+.modal-hidden {
+    display: none;
+}
+
+#info-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none; /* Para que no interfiera cuando está oculto */
+    transition: opacity 0.5s;
+}
+
+#info-modal.modal-visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background-color: rgba(0, 10, 0, 0.85);
+    border: 2px solid #00ff41;
+    padding: 30px;
+    width: 60%;
+    max-width: 800px;
+    max-height: 90vh; /**/
+    box-shadow: 0 0 20px #00ff41 inset, 0 0 30px #00ff41;
+    position: relative;
+    overflow: auto; /**/
+
+}
+
+.modal-content h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    border-bottom: 1px solid #00ff41;
+    padding-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    height: 250px; /* Espacio para tu contenido */
+    /*text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41 none;*/
+    /*overflow-y: auto; */
+}
+
+#close-modal {
+    background-color: #00ff41;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    font-family: 'VT323', monospace;
+}
+
+/* Estilo para el texto de derechos de autor */
+.copyright {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 1.2rem;
+    opacity: 0.5;
+    text-shadow: none; /* Para que el texto no tenga el efecto de brillo */
+}
+
+/*
+.no-flicker {
+    text-shadow: none;
+    animation: none;
+}*/
